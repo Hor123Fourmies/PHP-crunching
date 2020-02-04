@@ -7,7 +7,7 @@ $dico = explode("\r\n", $string);
 
 // * Combien de mots contient ce dictionnaire ?
 $resultat = count($dico);
-echo $resultat;
+echo "Le dictionnaire contient ".$resultat." mots.";
 echo "<br>";
 // 336.532
 
@@ -19,7 +19,7 @@ for ($i=0; $i<$resultat; $i++) {
         $mots++;
     }
 }
-echo $mots;
+echo "Il y a ". $mots. " mots de 15 lettres.";
 echo "<br>";
 
 //$zut = 'zut';
@@ -35,7 +35,7 @@ foreach ($dico as $value){
             //echo count($words);
         }
     }
-echo $words." !";
+echo "Il y a ".$words." mots de 15 lettres (avec Foreach) !";
 
 echo "<br>";
 
@@ -99,9 +99,11 @@ foreach ($dico as $word) {
 echo count($words_q); // answer: 8
 */
 
+
+// trim enlève les espaces
 $motsQ = 0;
 for ($i=0; $i<$resultat; $i++){
-    if (substr($dico[$i],-1) == "q"){
+    if (substr(trim($dico[$i]),-1) == "q"){
         $motsQ++;
     }
 }
