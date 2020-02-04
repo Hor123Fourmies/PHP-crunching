@@ -27,11 +27,12 @@ echo "<br>";
 
 
 $words = 0;
-foreach ($dico as $words){
+foreach ($dico as $value){
         //echo $words.", ";
-        if (strlen($words)==3){
+        if (strlen($value)==15){
             $words++;
-            echo count($words).", ";
+            echo $words.", ";
+            //echo count($words).", ";
         }
     }
 
