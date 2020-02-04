@@ -31,10 +31,11 @@ foreach ($dico as $value){
         //echo $words.", ";
         if (strlen($value)==15){
             $words++;
-            echo $words.", ";
-            //echo count($words).", ";
+            //echo $words.", ";
+            //echo count($words);
         }
     }
+echo $words." !";
 
 echo "<br>";
 
