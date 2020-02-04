@@ -29,7 +29,7 @@ echo "<br>";
 $words = 0;
 foreach ($dico as $value){
         //echo $words.", ";
-        if (strlen($value)==15){
+        if (strlen($value)===15){
             $words++;
             //echo $words.", ";
             //echo count($words);
@@ -77,6 +77,14 @@ for ($i=0; $i<$resultat; $i++){
 echo $motsW;
 echo "<br>";
 
+
+//$wordsW = 0;
+//foreach ($dico as $value){
+//    if (strpos($value, "w", 1)){
+//        $wordsW++;
+//    }
+//}
+//echo $wordsW. "!";
 /*
 $words_w = array();
 foreach ($dico as $word) {
@@ -103,7 +111,7 @@ echo count($words_q); // answer: 8
 // trim enlève les espaces
 $motsQ = 0;
 for ($i=0; $i<$resultat; $i++){
-    if (substr(trim($dico[$i]),-1) == "q"){
+    if (substr(trim($dico[$i]),-1, 1) == "q"){
         $motsQ++;
     }
 }
