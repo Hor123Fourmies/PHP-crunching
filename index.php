@@ -78,13 +78,18 @@ echo $motsW;
 echo "<br>";
 
 
-//$wordsW = 0;
-//foreach ($dico as $value){
-//    if (strpos($value, "w", 1)){
-//        $wordsW++;
-//    }
-//}
-//echo $wordsW. "!";
+$wordsW = 0;
+$findMe = "w";
+foreach ($dico as $value){
+    //if (strpos($value,$findMe)){}
+    if (strpbrk($value, "w")){
+        $wordsW++;
+
+    }
+}
+echo $wordsW. " !";
+echo "<br>";
+
 /*
 $words_w = array();
 foreach ($dico as $word) {
