@@ -31,7 +31,17 @@ echo "<br><br>";
 
 // Tt faire dans la même boucle
 
-$film = 0;
+$test = 0;
+foreach ($top as $key=>$value){
+    $movie = $value['im:name']['label'];
+    if ($movie == 'Gravity'){
+        echo $movie = $key;
+        break;
+    }
+}
+echo "<br>";
+
+
 foreach ($top as $key=>$value){
     $film = $value['im:name']['label'];
     if ($film == 'Gravity'){
@@ -44,21 +54,31 @@ echo "<br><br>";
 
 // * Quel est le réalisateur du film « The LEGO Movie » ?
 
-$realisateur = 0;
-$i = 0;
+$test2 = 0;
+foreach ($top as $key=>$value){
+    $film = $value['im:name']['label'];
+    $artist = $value['im:name']['label'];
+    if ($film == 'The LEGO Movie'){
+        $test2 = $artist;
+        break;
+    }
+}
 
 $lego = $value['im:name']['label'];
-$realisateur = $value['im:name']['label'];
+$resume = $value['summary']['label'];
+$realisateur = $value['im:artist']['label'];
 foreach ($top as $value=>$key){
     if($lego == "The LEGO Movie"){
-        echo $realisateur;
+        echo "The LEGO Movie :"."<br>";
+        echo $resume."<br>";
+        echo "Réalisateur : ".$realisateur;
         break;
     }
 }
 echo "<br><br>";
 
 
-$test2 = 0;
+
 $test3 = 0;
 $test4 = 0;
 $filmrecent = "";
@@ -68,15 +88,6 @@ $mostreal = "";
 
 
 
-
-foreach ($top as $key=>$value){
-    $film = $value['im:name']['label'];
-    $artist = $value['im:name']['label'];
-    if ($film == 'The LEGO Movie'){
-        $test2 = $artist;
-        break;
-    }
-}
 
 foreach ($top as $key=>$value){
     $date = $value['im:releaseDate']['label'];
