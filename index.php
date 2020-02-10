@@ -87,7 +87,7 @@ foreach ($dico as $value){
 
     }
 }
-echo $wordsW. " !";
+echo "Il y a ".$wordsW. " mots qui contiennent la lettre 'w'!";
 echo "<br>";
 
 /*
@@ -121,6 +121,19 @@ for ($i=0; $i<$resultat; $i++){
     }
 }
 echo $motsQ;
+echo "<br>";
+
+$wordsQ = 0;
+
+foreach ($dico as $value){
+    if (substr($value, -1) == "q"){
+        $wordsQ++;
+
+    }
+}
+echo "Il y a ".$wordsQ. " mots qui terminent pas la lettre 'q'!";
+echo "<br>";
+
 
 /*
 $motsQ = 0;

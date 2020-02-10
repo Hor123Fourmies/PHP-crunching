@@ -15,27 +15,44 @@ $top = $brut["feed"]["entry"]; # liste de films
 …
 10 …
 */
+$nbMovies = count($top);
+echo $nbMovies; // 100
+echo "<br><br>";
 
-$NBmovies = count($top);
-$test = 0;
-$test2 = 0;
-$test3 = 0;
-$test4 = 0;
-$filmrecent = "";
-$filmvieux = "";
-$vieuxdate = "";
-$mostreal = "";
+$i=1;
+for ($i; $i<=10; $i++) {
+    echo $i." ";
+    echo $top[$i]["im:name"]["label"]."<br>";
+}
+echo "<br><br>";
 
+
+// * Quel est le classement du film « Gravity » ?
 
 // Tt faire dans la même boucle
 
+
 foreach ($top as $key=>$value){
-    $movie = $value['im:name']['label'];
-    if ($movie == 'Gravity'){
-        $test = $key;
+    $film = $value['im:name']['label'];
+    if ($film == 'Gravity'){
+        echo "Gravity occupe la place ".$film = $key.".";
         break;
     }
 }
+
+echo "<br><br>";
+
+// * Quel est le réalisateur du film « The LEGO Movie » ?
+
+$lego = $value['im:name']['label'];
+//$realisateur = $value['author'];
+foreach ($top as $value=>$key){
+    if($lego == "The LEGO Movie"){
+        //echo $realisateur;
+        break;
+    }
+}
+echo "<br><br>";
 
 foreach ($top as $key=>$value){
     $film = $value['im:name']['label'];
@@ -45,6 +62,17 @@ foreach ($top as $key=>$value){
         break;
     }
 }
+$test3 = 0;
+$test4 = 0;
+$filmrecent = "";
+$filmvieux = "";
+$vieuxdate = "";
+$mostreal = "";
+
+
+
+
+
 
 foreach ($top as $key=>$value){
     $date = $value['im:releaseDate']['label'];
