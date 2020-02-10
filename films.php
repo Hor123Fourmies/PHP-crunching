@@ -67,11 +67,11 @@ foreach ($top as $key=>$value){
 $lego = $value['im:name']['label'];
 $resume = $value['summary']['label'];
 $realisateur = $value['im:artist']['label'];
-foreach ($top as $value=>$key){
+foreach ($top as $key=>$value){
     if($lego == "The LEGO Movie"){
         echo "The LEGO Movie :"."<br>";
         echo $resume."<br>";
-        echo "Réalisateur : ".$realisateur;
+        echo "Réalisateur : ".$realisateur.".";
         break;
     }
 }
@@ -79,22 +79,36 @@ echo "<br><br>";
 
 
 
+// * Combien de films sont sortis avant 2000 ?
+
+
 $test3 = 0;
+foreach ($top as $key=>$value){
+    $date = $value['im:releaseDate']['label'];
+    if ($date < 2000){
+       $test3++;
+    }
+}
+
+$film2000 = 0;
+foreach ($top as $key=>$value){
+    $date = $value['im:releaseDate']['label'];
+    if ($date < 2000){
+        $film2000++;
+    }
+}
+echo $film2000." films sont sortis avant 2000.";
+echo "<br><br>";
+
 $test4 = 0;
 $filmrecent = "";
 $filmvieux = "";
 $vieuxdate = "";
 $mostreal = "";
 
+// * Quel est le film le plus récent ? Le plus vieux ?
 
 
-
-foreach ($top as $key=>$value){
-    $date = $value['im:releaseDate']['label'];
-    if ($date < 2000){
-        $test3++;
-    }
-}
 
 /*
 foreach ($top as $key=>$value){
